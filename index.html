@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>后台管理系统</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="layui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">管理系统</div>
+				<!-- 头部区域（可配合layui已有的水平导航） -->
+				<ul class="layui-nav layui-layout-right">
+					<li class="layui-nav-item">
+						<a href="javascrip:void(0)" class="user">
+							贤心
+						</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascrip:void(0)">
+							退出
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						<li class="layui-nav-item">
+							<a class="" href="javascript:;">审核中心</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='1' data-target='audit-shanghu.html'>环保小卫士</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='2' data-target='audit-daili.html'>代理商审核</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='3' data-target='audit-qishou.html'>骑手审核</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">客户管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='4' data-target='customer-dailishang.html'>代理商管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='5' data-target='customer-shanghu.html'>商户管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='6' data-target='customer-qishou.html'>骑手管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='7' data-target='customer-yonghu.html'>用户管理</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">财务管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='8' data-target='money-tixian.html'>提现管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='9' data-target='money-yingshou.html'>盈收管理</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">数据查看</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='10' data-target='data-jiaoyi.html'>交易数据</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='11' data-target='data-tixian.html'>提现数据</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='12' data-target='data-dingdan.html'>订单数据</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='13' data-target='data-zhuce.html'>用户注册量</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='14' data-target='data-tuiguang.html'>推广信息</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='15' data-target='data-jingjia.html'>竞价排行量</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">职员管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='16' data-target='clerk-tuiguang.html'>推广员管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='17' data-target='clerk-yuangong.html'>员工管理</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">权限管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javscript:void(0)" data-num='18' data-target='permission-zhiwu.html'>职务管理</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='19' data-target='permission-quanxian.html'>权限分配</a>
+								</dd>
+								<dd>
+									<a href="javscript:void(0)" data-num='20' data-target='permission-yemian.html'>页面管理</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javscript:void(0)" data-num='21' data-target='bidding.html'>竞价排行管理</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javscript:void(0)" data-num='22' data-target='record.html'>系统记录</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="layui-body">
+				<!-- 内容主体区域 -->
+				<div class="layui-tab" lay-filter="demo">
+				  <ul class="layui-tab-title">
+				    <li class="layui-this">
+				    	首页
+				    </li>
+				    <li>
+				    	商户审核
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	代理商审核
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	骑手审核
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	代理商管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	商户管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	骑手管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				     <li>
+				    	用户管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	提现管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	盈收管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	交易数据
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	提现数据
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	订单数据
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	用户注册量
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	推广信息
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	竞价排行量
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	推广员管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				     <li>
+				    	员工管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	职务管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	权限分配
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	页面管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	竞价排行管理
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	系统记录
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				    <li>
+				    	个人信息
+				    	<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
+				    </li>
+				  </ul>
+				  <div class="layui-tab-content">
+				    <div class="layui-tab-item layui-show">
+				    	<div class="wrapper">
+					    	<h1>
+					    		欢迎使用跑腿后台管理系统
+					    	</h1>
+					    	<p>
+					    		—— 您的一切操作都会被系统记录，请谨慎操作！
+					    	</p>
+				    	</div>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				     <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				     <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				     <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				    <div class="layui-tab-item">
+				    	<iframe src="userinfo.html" width="100%" height="100%" frameborder="0"></iframe>
+				    </div>
+				  </div>
+				</div>
+			</div>
+
+			<div class="layui-footer">
+				<!-- 底部固定区域 -->
+				© 后台管理系统
+			</div>
+		</div>
+		<script src="layui/layui.all.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//JavaScript代码区域
+			layui.use('element', function() {
+				var element = layui.element;
+			});
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var allnum=1
+				$('.layui-nav-item a').click(function(){
+					var j=0
+					for(var i=0;i<$('.layui-tab-title li').length;i++){
+						if($('.layui-tab-title li').eq(i).css('display')=='inline-block'){
+							j++
+						}
+					}
+					
+					if(j==10){
+						layer.msg('您最多只能选择10个选项卡，请关闭多余选项卡再试');
+						return
+					}
+					var num=$(this).attr('data-num')
+					var target=$(this).attr('data-target')
+					$('iframe').eq(num-1).attr('src',target)
+					
+					$('.layui-tab-title li').eq(num).css('display','inline-block')
+					$('.layui-tab-title li').removeClass('layui-this')
+					$('.layui-tab-title li').eq(num).addClass('layui-this')
+					$('.layui-tab-title li').eq(num).click()
+					allnum++
+				})
+				$('.user').click(function(){
+					$('.layui-tab-title li').eq(23).css('display','inline-block')
+					$('.layui-tab-title li').removeClass('layui-this')
+					$('.layui-tab-title li').eq(23).addClass('layui-this')
+					$('.layui-tab-title li').eq(23).click()
+					allnum++
+				})
+				$('.layui-tab-title').on('click','.layui-tab-close',function(){
+					console.log($('.layui-tab-title li').eq(0).click())
+					$(this).parent().hide()
+					allnum--
+					event.stopPropagation();
+				})
+			})
+		</script>
+	</body>
+
+</html>

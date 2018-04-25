@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/modules/layer/default/layer.css"/>
+		<script src="layui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="layui/calendar.js"></script>
+	</head>
+	<style type="text/css">
+		select{width: 100%;}
+		form{justify-content:center;}
+	</style>
+	<body>
+		<div class="main">
+			<div class="table-top">
+					<form action="" class="form-top">
+						搜索条件：
+						<input type="text" placeholder="请输入姓名"/>
+						<input type="number" placeholder="请输入手机号"/>
+						<div class="sousuo_rq">
+				            <input type="text" name="sta" id="sta" class="text_in" onclick="__C('sta','1')" placeholder="选择起始时间">
+				            <span> – </span>
+				            <input type="text" name="end" id="end" class="text_in" onclick="__C('end','1')" placeholder="选择结束时间">
+				        </div>
+				        <input type="submit" value="确定搜索" style="padding: 0 5px ;color: white;text-indent: 0;"/>
+					</form>
+				<span>
+					显示1到20条，共100条
+					<span class="layui-btn addjing">
+						添加竞价
+					</span>
+				</span>
+			</div>
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>展示位置</th>
+						<th>金额</th>
+						<th>地区</th>
+						<th>周期(日)</th>
+						<th>创建时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-id='LL456651'>
+						<td>1</td>
+						<td>首页</td>
+						<td>200</td>
+						<td>华北区</td>
+						<td>2</td>
+						<td>2019.08.12</td>
+						<td class="setting">
+							<img src="img/detail.png" class="detail" data-id='KJ5846525'/>
+							<img src="img/clear.png" class="close" data-id='LN2568566'/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="layui-table-page">
+				<div id="layui-table-page1">
+					<div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+						<a href="javascript:;" class="layui-laypage-prev" data-page="0"><i class="layui-icon"></i></a>
+						<span class="layui-laypage-spr dlshow">…</span>
+						<a href="javascript:;" data-page="1" class="myindex dl-this">1</a>
+						<a href="javascript:;" data-page="2" class="myindex">2</a>
+						<a href="javascript:;" data-page="3" class="myindex">3</a>
+						<span class="layui-laypage-spr">…</span>
+						<a href="javascript:;" class="layui-laypage-last myindex" title="尾页" data-page="100">100</a>
+						<a href="javascript:;" class="layui-laypage-next" data-page="2"><i class="layui-icon"></i></a>
+						<span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input topage">页
+						<span class="layui-laypage-limits">
+							<select lay-ignore="">
+								<option value="10" selected="">10 条/页</option>
+								<option value="20">20 条/页</option>
+							</select>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="alert">
+			<div class="alert-top">
+				<span>
+					商户详情
+				</span>
+				<img src="img/clear.png" class="alert-clear"/>
+			</div>
+			<div class="alert-main">
+				<form class="layui-form layui-form-pane" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">金额</label>
+						<div class="layui-input-block">
+							<input type="number" name="title"  class="layui-input" value="2564">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">展示位置</label>
+						<div class="layui-input-block" id="city01">
+							<select name="city"  class="prov" lay-ignore>
+								<option value="">首页轮播</option>
+								<option value="0">同城惠</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">展示期限(日)</label>
+						<div class="layui-input-block">
+							<input type="number" name="title"  class="layui-input" value="2564">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">展示地区</label>
+						<div class="layui-input-block" id="city01">
+							<select name="city"  class="prov" lay-ignore>
+								<option value="">全国</option>
+								<option value="0">全省</option>
+								<option value="0">全市</option>
+								<option value="0">所在区</option>
+							</select>
+						</div>
+					</div>
+				</form>
+				<h1>
+					<div class="layui-btn">
+						提交
+					</div>
+					<div class="layui-btn alert-clear">
+						取消
+					</div>
+				</h1>
+			</div>
+		</div>
+		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layui/lay/modules/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.dlshow').hide()
+				var page = 1
+				//				上一页
+				$('.layui-laypage-prev').click(function() {
+					if(page == 1) {
+						layer.msg('当前页已经是第一页');
+					} else {
+						page--
+						layer.msg('跳转到' + page + '页');
+						active()
+					}
+				})
+				//				下一页
+				$('.layui-laypage-next').click(function() {
+					//					if(page==1){
+					//						layer.msg('当前页已经是第一页');
+					//						break
+					//					}
+					page++
+					layer.msg('跳转到' + page + '页');
+					active()
+				})
+				//				转到指定页
+				$('.myindex').click(function() {
+					var index = $(this).attr('data-page')
+					page = index
+					layer.msg('跳转到' + page + '页');
+					active()
+				})
+				$('.topage').change(function() {
+					var index = $(this).val()
+					page = index
+					layer.msg('跳转到' + page + '页');
+					active()
+				})
+
+				function active() {
+					$('.myindex').removeClass('dl-this')
+					var boo = true
+					$('.dlshow').hide()
+					for(var i = 0; i < $('.myindex').length; i++) {
+						if($('.myindex').eq(i).attr('data-page') == page) {
+							boo = false
+						}
+					}
+					if(boo) {
+						$('.dlshow').css('display', 'inline-block')
+						$('.myindex').eq(0).attr('data-page', page - 2).html(page - 2)
+						$('.myindex').eq(1).attr('data-page', page - 1).html(page - 1)
+						$('.myindex').eq(2).attr('data-page', page).html(page)
+					}
+					for(var i = 0; i < $('.myindex').length; i++) {
+						if($('.myindex').eq(i).attr('data-page') == page) {
+							$('.myindex').eq(i).addClass('dl-this')
+							return
+						}
+					}
+				}
+				//				打开商户详情
+				$('tr').dblclick(function() {
+					var id = $(this).attr('data-id')
+					$('.alert').show()
+				})
+//				关闭蒙层
+				$('.alert-clear').click(function(){
+					$('.alert').hide()
+				})
+//				删除代理商
+				$('.close').click(function(){
+					if (confirm("确定删除此条信息吗？")){
+						layer.msg('已删除');
+					}
+					event.stopPropagation()
+				})
+//				打开详情按钮
+				$('.detail').click(function() {
+					var id = $(this).attr('data-id')
+					$('.alert').show()
+				})	
+			})
+		</script>
+	</body>
+
+</html>
